@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FORM USERS</title>
+    </head>
+    <!-- DIAN RISANTI - JCWM15 -->
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <body>
+        <h1>FORM USERS</h1>
+        <form id="form-user">
+            <input type="text" placeholder="username" id="username"/>
+            <input type="text" placeholder="email" id="email"/>
+            <select id="role">
+                role
+                <option value="user">user</option>
+                <option value="admin">admin</option>
+            </select>
+            <button onclick="OnButtonAddUser(event)">ADD USER</button>
+        </form>
+
+        <br>
+        <h1>USERS DATA</h1>
+        <table id="data-user">
+            <thead>
+                <th>No</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Action</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </body>
+    <script src="/database.js"></script>
+</html>

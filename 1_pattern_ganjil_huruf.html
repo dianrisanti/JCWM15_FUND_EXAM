@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SOAL NO 1</title>
+    </head>
+    <!-- DIAN RISANTI A - JCWM15 -->
+    <body>
+        <h1>PATTERN</h1>
+        <input type="text" placeholder="masukan input" id="input"/> <br>
+        <button onclick="OnButtonGanjil()">GANJIL</button>
+        <button onclick="OnButtonHuruf()">HURUF</button> <br>
+        <p id="output">RESULT:</p>
+    </body>
+    <script>
+        function OnButtonGanjil(){
+            let inputGanjil = parseInt(document.getElementById("input").value)
+            let output = document.getElementById("output")
+            
+            if(inputGanjil > 4 || inputGanjil < 0) {
+                alert("Input tidak sesuai!")
+            } else {
+                let patt = ""
+                let initial = 1
+                for(let i = 0; i < inputGanjil; i++) {
+                    for(let j = 0; j <= i; j++) {
+                        patt += initial + "&nbsp"
+                        initial += 2
+                    } patt += "<br>"
+                }
+                output.innerHTML = patt
+            }
+
+        }
+
+        function OnButtonHuruf() {
+            let inputHuruf = parseInt(document.getElementById("input").value)
+            let output1 = document.getElementById("output")
+            
+            if(inputHuruf > 4 || inputHuruf <0) {
+                alert("Input tidak sesuai!")
+            } else {
+                let patt1 = ""
+                let initial1 = 1
+                for(let i = 0; i < inputHuruf; i++) {
+                    for(let j = 0; j <= i; j++) {
+                        patt1 += String.fromCharCode(65 + initial1) + "&nbsp"
+                        initial1 += 2
+                    } patt1 += "<br>"
+                }
+                output1.innerHTML = patt1
+            }
+        }
+    </script>
+</html>

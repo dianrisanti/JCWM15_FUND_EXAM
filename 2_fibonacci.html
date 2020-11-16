@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fibonacci</title>
+    </head>
+    <!-- DIAN RISANTI - JCWM15 -->
+    <body>
+        <h1>DERET FIBONACCI</h1>
+        Masukan Angka: <input type="number" placeholder="angka" id="input"/> <br>
+        <p id="output"></p>
+        <button onclick="OnButtonShow()">SHOW</button>
+        <button onclick="OnButtonGanjil()">GANJIL</button>
+        <button onclick="OnButtonGenap()">GENAP</button>
+    </body>
+    <script>
+        function OnButtonShow() {
+            let input = document.getElementById("input").value
+            let output = document.getElementById("output")
+            let initial2 = 0
+            let current = 1
+            let temp = 0
+            let fibonacci = []
+            while(current < input) {
+                temp = current 
+                current += initial2 
+                initial2 = temp 
+
+                fibonacci.push(initial2)
+            }
+
+            let display
+            for(let i = 0; i < fibonacci.length; i++) {
+                display += fibonacci[i] + ", &nbsp"
+            }
+            output.innerHTML = display
+
+            return fibonacci
+        }
+
+        function OnButtonGanjil() {
+            let input = document.getElementById("input").value
+            let output = document.getElementById("output")
+            let initial2 = 0
+            let current = 1
+            let fibonacci = []
+            let oddNumb = []
+            while(current < input) {
+                let temp = current 
+                current += initial2 
+                initial2 = temp 
+
+                fibonacci.push(initial2)
+            }
+
+            let odd = fibonacci.filter((number) => number % 2 == 1)
+            let jumlahOdd = odd.reduce((a,b) => a + b)
+
+            let display
+            for(let i = 0; i < odd.length; i++) {
+                display += odd[i] + "&nbsp"
+            } display += ` = ${jumlahOdd}`
+            output.innerHTML = display
+            
+            return oddNumb
+        }
+
+        function OnButtonGenap() {
+            let input = document.getElementById("input").value
+            let output = document.getElementById("output")
+            let initial2 = 0
+            let current = 1
+            let fibonacci = []
+            let evenNumb = []
+            while(current < input) {
+                let temp = current 
+                current += initial2 
+                initial2 = temp 
+
+                fibonacci.push(initial2)
+            }
+
+            let even = fibonacci.filter((number) => number % 2 == 0)
+            let jumlahEven = even.reduce((a,b) => a + b)
+
+            let display
+            for(let i = 0; i < even.length; i++) {
+                display += even[i] + "&nbsp"
+            } display += `= ${jumlahEven}`
+            output.innerHTML = display 
+            
+            return evenNumb
+        }
+    </script>
+</html>
